@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fde-pii-redaction"
+version = "1.0.0"
+description = "PII redaction middleware for SaaS/AI pipelines: validated detectors, consistent typed placeholders, per-tenant token vault, hash-only compliance audit."
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = ["fastapi", "pydantic"]
+
+[project.optional-dependencies]
+dev = ["pytest", "httpx", "uvicorn"]
+
+[tool.setuptools.packages.find]
+include = ["fde_pii_redaction*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
